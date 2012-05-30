@@ -130,6 +130,7 @@ class AuctionsController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Auctions');
+        $iAuctionsCount = 3;
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
             'iAuctionsCount' =>$iAuctionsCount,
