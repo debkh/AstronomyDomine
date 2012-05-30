@@ -132,6 +132,7 @@ class AuctionsController extends Controller
 		$dataProvider=new CActiveDataProvider('Auctions');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+            'iAuctionsCount' =>$iAuctionsCount,
 		));
 	}
 

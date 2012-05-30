@@ -10,6 +10,33 @@ $this->menu=array(
 );
 ?>
 
+<style>
+    .summary {display:table; width:100%; padding:0; margin:0 0 20px 0;}
+    .summary ul {margin:0; padding:0; overflow:hidden; display:table-row;}
+    .summary li {margin:0; padding:19px; display:table-cell; border-right:1px solid #eee;}
+    .summary li:last-child {border:none;}
+    .summary a {display:block; font-size:1.2em; line-height:1.4em; text-transform:uppercase; color:#000;}
+    .summary a:hover {text-decoration: none;}
+    .summary .count {display:block; font-size:1.75em; font-weight:bold;}
+</style>
+
+<div class="well summary">
+    <ul>
+        <li>
+            <a href="#"><span class="count">3</span> Projects</a>
+        </li>
+        <li>
+            <a href="#"><span class="count">27</span> Tasks</a>
+        </li>
+        <li>
+            <a href="#"><span class="count">7</span> Messages</a>
+        </li>
+        <li class="last">
+            <a href="#"><span class="count">5</span> Files</a>
+        </li>
+    </ul>
+</div>
+
 <h1>Auctions</h1>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -23,7 +50,6 @@ $this->menu=array(
         'date',
         array(
             'class'=>'CButtonColumn',
-            'viewButtonUrl'=>'Yii::app()->createUrl("/lots/view", array("id" => $data->id))',
         ),
     ),
 

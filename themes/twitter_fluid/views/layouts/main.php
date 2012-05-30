@@ -87,7 +87,7 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span2">
           <div class="well sidebar-nav">
 
               <?php
@@ -101,8 +101,8 @@
               ?>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">
-          <div class="well">
+        <div class="span10">
+          <div class="">
 			<?php echo $content ?>
           </div>
 
