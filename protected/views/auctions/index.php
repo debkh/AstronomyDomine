@@ -23,13 +23,13 @@ $this->menu=array(
 <div class="well summary">
     <ul>
         <li>
-            <a href="#"><span class="count"><?php $iAuctionsCount; ?></span> Projects</a>
+            <a href="#"><span class="count"><?php echo $aStats['iAuctionsCount']; ?></span> Projects</a>
         </li>
         <li>
-            <a href="#"><span class="count">27</span> Tasks</a>
+            <a href="#"><span class="count"><?php echo $aStats['iLotsCount']; ?></span> Lots</a>
         </li>
         <li>
-            <a href="#"><span class="count">7</span> Messages</a>
+            <a href="#"><span class="count"><?php echo $aStats['iUsersCount']; ?></span> Users</a>
         </li>
         <li class="last">
             <a href="#"><span class="count">5</span> Files</a>
