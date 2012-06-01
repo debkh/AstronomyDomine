@@ -38,8 +38,8 @@ class Lots extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('id_auction', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>45),
+			array('id_auction', 'numerical', 'integerOnly'=>true, 'required'),
+			array('name', 'length', 'max'=>45, 'required'),
 			array('description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -65,7 +65,7 @@ class Lots extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_auction' => 'Id Auction',
+			'id_auction' => 'Auction',
 			'name' => 'Name',
 			'description' => 'Description',
 		);

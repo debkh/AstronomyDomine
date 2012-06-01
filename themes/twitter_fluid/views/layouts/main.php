@@ -23,7 +23,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Fluid Bootstrap, from Twitter</title>
+<title><?php echo Yii::app()->name; ?></title>
 <meta name="description" content="">
 <meta name="author" content="">
 
