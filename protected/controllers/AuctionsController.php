@@ -50,7 +50,7 @@ class AuctionsController extends Controller
 	 */
 	public function actionView($id)
 	{
-        $dataLotsProvider=new CActiveDataProvider('Lots');
+
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -130,7 +130,9 @@ class AuctionsController extends Controller
 	 */
 	public function actionIndex()
 	{
+
 		$dataProvider=new CActiveDataProvider('Auctions');
+
         $aStats['iAuctionsCount'] = Auctions::model()->count();
         $aStats['iLotsCount'] = Lots::model()->count();
         $aStats['iUsersCount'] = User::model()->count();
@@ -163,7 +165,6 @@ class AuctionsController extends Controller
 	public function loadModel($id)
 	{
 		$model=Auctions::model()->findByPk($id);
-        $lots=$model->lots();
 
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');

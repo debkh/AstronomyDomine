@@ -5,7 +5,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label' => 'Manage', '#'),
 	array('label'=>'List Lots', 'url'=>array('index')),
 	array('label'=>'Manage Lots', 'url'=>array('admin')),
 );

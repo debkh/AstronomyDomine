@@ -1,5 +1,5 @@
 <div>
-<table class="table table-bordered">
+<table class="table table-striped table-bordered table-condensed">
 <thead>
 <th class="span1">
     ID

@@ -7,17 +7,21 @@ $this->breadcrumbs=array(
 $this->menu=array(
     array('label' => 'Manage', '#'),
 	array('label'=>'List Auctions', 'url'=>array('index')),
+    array('label'=>'Create New Lot', 'url'=>array('lots/create/'.$model->id)),
 	array('label'=>'Create Auctions', 'url'=>array('create')),
-	array('label'=>'Update Auctions', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Auctions', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Auctions', 'url'=>array('admin')),
+	array('label'=>'Edit Current Auction', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 
-<h1>View Auctions #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
+<div class="well">
+    <fieldset>
+    <legend>Auction #<?php echo $model->id; ?></legend>
+    <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-bordered table-condensed',
+    ),
 	'attributes'=>array(
 		'id',
 		'name',
@@ -25,11 +29,14 @@ $this->menu=array(
 		'date',
 	),
 )); ?>
-
-<div id="lots">
-
+    </fieldset>
+</div>
+<?php //var_dump($model->lotsCount); ?>
+<div id="lots" class="well">
+<fieldset>
+    <legend>Lots list</legend>
 <?php $this->renderPartial('_lots',array(
         'lots'=>$model->lots,
     )); ?>
-
+</fieldset>
 </div>

@@ -8,6 +8,7 @@
  * @property integer $id_auction
  * @property string $name
  * @property string $description
+ * @property string $other
  */
 class Lots extends CActiveRecord
 {
@@ -37,13 +38,13 @@ class Lots extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-
-			array('id_auction', 'numerical', 'integerOnly'=>true, 'required'),
-			array('name', 'length', 'max'=>45, 'required'),
-			array('description', 'safe'),
+			array('id_auction, name', 'required'),
+			array('id_auction', 'numerical', 'integerOnly'=>true,),
+			array('name', 'length', 'max'=>255),
+			array('description', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_auction, name, description', 'safe', 'on'=>'search'),
+			array('id, id_auction, name, description, other', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,7 +56,7 @@ class Lots extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'auction'=>array(self::BELONGS_TO, 'Auctions', 'id_auction'),
+            'lots' => array(self::BELONGS_TO, 'Auctions', 'id_auction'),
 		);
 	}
 
@@ -66,9 +67,10 @@ class Lots extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_auction' => 'Auction',
+			'id_auction' => 'Id Auction',
 			'name' => 'Name',
 			'description' => 'Description',
+			'other' => 'Other',
 		);
 	}
 
@@ -87,6 +89,7 @@ class Lots extends CActiveRecord
 		$criteria->compare('id_auction',$this->id_auction);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('other',$this->other,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

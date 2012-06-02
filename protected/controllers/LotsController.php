@@ -66,12 +66,19 @@ class LotsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Lots']))
+		if(isset($_POST['Lots']) && isset($_POST['Lots']['id_auction']))
 		{
 			$model->attributes=$_POST['Lots'];
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+
+        if (isset($_GET['id']))
+            $model->id_auction=$_GET['id'];
+         else
+            throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+
 
 		$this->render('create',array(
 			'model'=>$model,

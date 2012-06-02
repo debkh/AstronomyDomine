@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form well span2" style="margin-left: 0px;">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'auctions-form',
@@ -8,6 +8,8 @@
     ),
 	'enableAjaxValidation'=>false,
 )); ?>
+<fieldset>
+    <legend><?php echo $model->id?'Edit Auction':'Create Auction'; ?></legend>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -28,7 +30,7 @@
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary')); ?>
 	</div>
-
+</fieldset>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

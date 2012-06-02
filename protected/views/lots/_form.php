@@ -4,16 +4,13 @@
 	'id'=>'lots-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-
+    <?php echo $form->hiddenField($model,'id_auction'); ?>
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_auction'); ?>
-		<?php echo $form->textField($model,'id_auction'); ?>
-		<?php echo $form->error($model,'id_auction'); ?>
-	</div>
+
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
@@ -23,7 +20,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->textArea($model,'description',array('size'=>60,'maxlength'=>512)); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
@@ -32,7 +29,7 @@
 		<?php echo $form->textArea($model,'other',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'other'); ?>
 	</div>
-
+    <?php echo $form->hiddenField($model,'id_auction'); ?>
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

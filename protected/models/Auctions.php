@@ -39,7 +39,6 @@ class Auctions extends CActiveRecord
 		return array(
 			array('name',  'required'),
             array('description', 'length', 'max' => 45),
-
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, description, date', 'safe', 'on'=>'search'),
@@ -55,6 +54,7 @@ class Auctions extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'lots' => array(self::HAS_MANY, 'Lots', 'id_auction'),
+            
 		);
 	}
 
