@@ -23,7 +23,7 @@ $this->menu=array(
 <div class="well summary">
     <ul>
         <li>
-            <a href="#"><span class="count"><?php echo $aStats['iAuctionsCount']; ?></span> Projects</a>
+            <a href="#"><span class="count"><?php echo $aStats['iAuctionsCount']; ?></span> Auctions</a>
         </li>
         <li>
             <a href="#"><span class="count"><?php echo $aStats['iLotsCount']; ?></span> Lots</a>

@@ -2,8 +2,7 @@
 	Yii::app()->clientscript
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
-		// use it when you need it!
-		/*
+        ->registerCssFile( Yii::app()->theme->baseUrl . '/css/style.css' )
 		->registerCoreScript( 'jquery' )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
@@ -17,7 +16,7 @@
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-collapse.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
-		*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,26 +31,6 @@
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Le styles -->
-<style type="text/css">
-  body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-  }
-  .sidebar-nav {
-	padding: 9px 0;
-  }
-
-	@media (max-width: 980px) {
-		body{
-			padding-top: 0px;
-		}
-	}
-
-    .row {
-        margin-left: 0px;
-    }
-</style>
 
 <!-- Le fav and touch icons -->
 <link rel="shortcut icon" href="images/favicon.ico">
