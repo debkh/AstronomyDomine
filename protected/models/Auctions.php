@@ -54,7 +54,6 @@ class Auctions extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'lots' => array(self::HAS_MANY, 'Lots', 'id_auction'),
-            
 		);
 	}
 
