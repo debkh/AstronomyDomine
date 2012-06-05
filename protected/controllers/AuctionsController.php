@@ -130,8 +130,13 @@ class AuctionsController extends Controller
 	 */
 	public function actionIndex()
 	{
-
-		$dataProvider=new CActiveDataProvider('Auctions');
+        $criteria=new CDbCriteria(array(
+            'together'=>true,
+            'with'=>'lotsCount'
+        ));
+		$dataProvider=new CActiveDataProvider('Auctions', array(
+            'criteria'=>$criteria
+        ));
 
         $aStats['iAuctionsCount'] = Auctions::model()->count();
         $aStats['iLotsCount'] = Lots::model()->count();

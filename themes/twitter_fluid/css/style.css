@@ -23,3 +23,16 @@ body {
 .summary a {display:block; font-size:1.2em; line-height:1.4em; text-transform:uppercase; color:#000;}
 .summary a:hover {text-decoration: none;}
 .summary .count {display:block; font-size:1.75em; font-weight:bold;}
+
+.row.error input {}
+
+.row.error input, .row.error select, .row.error textarea {
+    color: #b94a48;
+    border-color: #b94a48;
+}
+.row.error input:focus, .row.error select:focus, .row.error textarea:focus {
+    border-color: #953b39;
+    -webkit-box-shadow: 0 0 6px #d59392;
+    -moz-box-shadow: 0 0 6px #d59392;
+    box-shadow: 0 0 6px #d59392;
+}

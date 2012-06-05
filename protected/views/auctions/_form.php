@@ -1,4 +1,4 @@
-<div class="form well span2" style="margin-left: 0px;">
+<div class="form span3" style="margin-left: 0px;">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'auctions-form',
@@ -17,13 +17,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>45,'class'=>'input-xlarge')); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textArea($model,'description',array('size'=>45,'maxlength'=>45,'class'=>'input-xlarge')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 

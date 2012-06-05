@@ -35,12 +35,14 @@ $this->menu=array(
     'dataProvider'=>$dataProvider,
     'columns'=>array(
         'id',
+        'lotsCount',
         'name',
         'description',
         'date',
         array(
             'class'=>'CButtonColumn',
         ),
+
     ),
 
 )); ?>
